@@ -1,0 +1,37 @@
+/* Components */
+@import url("styles/components/Card.css");
+@import url("styles/components/Graph.css");
+@import url("styles/components/Sidebar.css");
+@import url("styles/components/Topbar.css");
+@import url("styles/components/Map.css");
+@import url("styles/components/List.css");
+/* Pages */
+@import url("styles/pages/Dashboard.css");
+@import url("styles/pages/Aqi.css");
+@import url("styles/pages/Carbon.css");
+@import url("styles/pages/Environment.css");
+@import url("styles/pages/FullMap.css");
+@import url("styles/pages/Profile.css");
+
+.app {
+	display: flex;
+	height: 100dvh;
+	max-width: 100dvw;
+}
+
+.app .main {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+	.app {
+		min-height: 100dvh;
+	}
+
+	.app .main {
+		padding-bottom: 12px;
+	}
+}

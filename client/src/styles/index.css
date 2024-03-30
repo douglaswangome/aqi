@@ -1,0 +1,118 @@
+@import "leaflet/dist/leaflet.css";
+@import url("https://fonts.googleapis.com/css2?family=Delius&display=swap");
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+:root {
+	font-family: "Delius", sans-serif;
+	line-height: 1.6;
+
+	/* Colors */
+	--page-bg: #101010;
+	--dark-container-bg: #151515;
+	--container-bg: #202020;
+	--border: #404040;
+	--text: #f0f0f0;
+	--dark-text: #d0d0d0;
+	--primary: #0092ca;
+	--good: #008000;
+	--moderate: #cccc00;
+	--unhealthy-sensitive: #b87333;
+	--unhealthy: #8b0000;
+	--very-unhealthy: #4b0082;
+	--hazardous: #800000;
+
+	/* Transitions */
+	--transition: all 0.2s ease-in-out;
+}
+
+body {
+	background-color: var(--page-bg);
+	color: var(--text);
+}
+
+a {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+	color: var(--text);
+	text-decoration: none;
+}
+
+span.city {
+	font-size: 42px;
+	font-weight: 700;
+	color: var(--text);
+}
+span.legend {
+	font-size: 30px;
+	font-weight: 600;
+	color: var(--text);
+}
+span.subtitle {
+	font-size: 14px;
+	font-weight: 700;
+	color: var(--dark-text);
+}
+span.value {
+	font-size: 84px;
+	font-weight: 700;
+}
+
+.leaflet-layer,
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out,
+.leaflet-control-attribution {
+	filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+.leaflet-control-attribution.leaflet-control {
+	display: flex;
+}
+
+::-webkit-scrollbar {
+	width: 4px;
+}
+::-webkit-scrollbar-thumb {
+	background: var(--container-bg);
+	border-radius: 4px;
+}
+::-webkit-scrollbar-track {
+	background: var(--page-bg);
+}
+
+.line {
+	background-color: var(--border);
+	height: 100%;
+	width: 1px;
+}
+
+@media screen and (max-width: 768px) {
+	:root {
+		line-height: 1;
+	}
+	span.city {
+		font-size: 36px;
+		font-weight: 700;
+		color: var(--text);
+	}
+	span.legend {
+		font-size: 30px;
+		font-weight: 600;
+		color: var(--text);
+	}
+	span.subtitle {
+		font-size: 14px;
+		font-weight: 700;
+		color: var(--dark-text);
+	}
+	span.value {
+		font-size: 78px;
+		font-weight: 700;
+	}
+}

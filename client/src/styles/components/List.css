@@ -1,0 +1,32 @@
+ul {
+	display: flex;
+	flex-direction: column;
+	gap: 12px;
+	height: 100%;
+	list-style-type: none;
+}
+
+ul li {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 12px 8px;
+	border-block: 1px solid var(--container-bg);
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+}
+
+ul li:hover {
+	background-color: var(--container-bg);
+}
+
+ul li svg {
+	height: 30px;
+	width: 30px;
+}
+
+ul li div {
+	display: flex;
+	justify-content: space-between;
+	flex: 1;
+}
