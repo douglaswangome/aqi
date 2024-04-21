@@ -1,0 +1,30 @@
+.aqi {
+	display: grid;
+	grid-template-columns: 2fr 1fr;
+	gap: 12px;
+	height: calc(100% - 44px);
+	padding: 12px;
+}
+
+@media screen and (max-width: 1110px) {
+	.aqi {
+		display: flex;
+		flex-direction: column;
+		height: fit-content;
+	}
+
+	.aqi .card.graph {
+		height: 600px;
+	}
+
+	.aqi .card.gases ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.aqi .card.gases ul {
+		grid-template-columns: 1fr;
+	}
+}

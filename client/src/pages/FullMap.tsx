@@ -1,9 +1,11 @@
 import { FC } from "react";
+// Components
+import Map from "components/Map";
 
 const FullMap: FC = () => {
 	return (
 		<div className="fullmap">
-			<div className="mp">map or whatevr</div>
+			<Map zoom={20} />
 		</div>
 	);
 };

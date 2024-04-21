@@ -8,8 +8,6 @@ import Topbar from "components/Topbar";
 // Pages
 const Dashboard = lazy(() => import("pages/Dashboard"));
 const Aqi = lazy(() => import("pages/Aqi"));
-const Carbon = lazy(() => import("pages/Carbon"));
-const Environment = lazy(() => import("pages/Environment"));
 const FullMap = lazy(() => import("src/pages/FullMap"));
 const Profile = lazy(() => import("pages/Profile"));
 
@@ -22,7 +20,7 @@ const Layout: FC = () => {
 
 	return (
 		<div className="app">
-			<Sidebar toggle={toggle} />
+			<Sidebar toggle={toggle} handleToggle={() => setToggle(false)} />
 			<div className="main">
 				<Topbar toggle={toggle} handleToggle={handleToggle} />
 				<Outlet />
@@ -37,8 +35,6 @@ const routes = createBrowserRouter([
 		children: [
 			{ path: "/", element: <Dashboard /> },
 			{ path: "/aqi", element: <Aqi /> },
-			{ path: "/carbon", element: <Carbon /> },
-			{ path: "/environment", element: <Environment /> },
 			{ path: "/map", element: <FullMap /> },
 			{ path: "/profile", element: <Profile /> },
 		],

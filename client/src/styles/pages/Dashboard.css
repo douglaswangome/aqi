@@ -2,8 +2,8 @@
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	gap: 12px;
-	height: calc(100% - 44px);
 	padding: 12px;
+	height: calc(100% - 44px);
 }
 
 .dashboard .top {
@@ -52,6 +52,7 @@
 @media screen and (max-width: 768px) {
 	.dashboard {
 		grid-template-rows: 1fr;
+		height: fit-content;
 	}
 	.dashboard .top {
 		grid-template-columns: 1fr;

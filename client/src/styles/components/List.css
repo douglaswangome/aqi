@@ -9,7 +9,7 @@ ul {
 ul li {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: 6px;
 	padding: 12px 8px;
 	border-block: 1px solid var(--container-bg);
 	cursor: pointer;

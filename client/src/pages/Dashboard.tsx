@@ -54,7 +54,7 @@ const Dashboard: FC = () => {
 					</div>
 				</Card>
 				<Card className="map" title="">
-					<Map />
+					<Map zoom={30} />
 				</Card>
 			</div>
 			<div className="bottom">
@@ -62,6 +62,7 @@ const Dashboard: FC = () => {
 					<Graph
 						series={[{ data: [30, 45, 47, 48, 46], label: "AQI" }]}
 						xData={["00:00", "01:00", "02:00", "03:00", "04:00"]}
+						hideLegend={false}
 					/>
 				</Card>
 				<Card title="Environment">

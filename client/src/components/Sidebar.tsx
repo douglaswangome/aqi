@@ -3,20 +3,18 @@ import { motion } from "framer-motion";
 // Icons
 import { RxDashboard } from "react-icons/rx";
 import { FaLeaf, FaMapLocationDot } from "react-icons/fa6";
-import { GiFootprint, GiForest } from "react-icons/gi";
 // Links
 import { NavLink } from "react-router-dom";
 
 interface SidebarProps {
 	toggle: boolean;
+	handleToggle: () => void;
 }
 
-const Sidebar: FC<SidebarProps> = ({ toggle }) => {
+const Sidebar: FC<SidebarProps> = ({ toggle, handleToggle }) => {
 	const links: { name: string; icon: JSX.Element; path: string }[] = [
 		{ name: "Dashboard", icon: <RxDashboard />, path: "/" },
 		{ name: "AQI", icon: <FaLeaf />, path: "/aqi" },
-		{ name: "Carbon Footprint", icon: <GiFootprint />, path: "/carbon" },
-		{ name: "Environment", icon: <GiForest />, path: "/environment" },
 		{ name: "Map", icon: <FaMapLocationDot />, path: "/map" },
 	];
 
@@ -36,6 +34,7 @@ const Sidebar: FC<SidebarProps> = ({ toggle }) => {
 						key={index}
 						to={link.path}
 						className={({ isActive }) => (isActive ? "item active" : "item")}
+						onClick={handleToggle}
 					>
 						<motion.div
 							initial={{ x: -50, opacity: 0 }}

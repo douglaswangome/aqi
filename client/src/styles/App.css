@@ -1,17 +1,12 @@
 /* Components */
 @import url("styles/components/Card.css");
-@import url("styles/components/Graph.css");
 @import url("styles/components/Sidebar.css");
 @import url("styles/components/Topbar.css");
-@import url("styles/components/Map.css");
 @import url("styles/components/List.css");
 /* Pages */
 @import url("styles/pages/Dashboard.css");
 @import url("styles/pages/Aqi.css");
-@import url("styles/pages/Carbon.css");
-@import url("styles/pages/Environment.css");
 @import url("styles/pages/FullMap.css");
-@import url("styles/pages/Profile.css");
 
 .app {
 	display: flex;

@@ -1,7 +1,11 @@
 import { FC, useRef } from "react";
-import { CircleMarker, MapContainer, TileLayer, Tooltip } from "react-leaflet";
+import { CircleMarker, MapContainer, TileLayer } from "react-leaflet";
 
-const Map: FC = () => {
+interface MapProps {
+	zoom: number;
+}
+
+const Map: FC<MapProps> = ({ zoom }) => {
 	const mapRef = useRef(null);
 	const coords: { lat: number; lon: number } = {
 		lat: -1.1018,
@@ -11,7 +15,7 @@ const Map: FC = () => {
 	return (
 		<MapContainer
 			center={[coords.lat, coords.lon]}
-			zoom={15}
+			zoom={zoom}
 			scrollWheelZoom={false}
 			ref={mapRef}
 			style={{ height: "100%", width: "100%" }}
