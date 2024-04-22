@@ -86,63 +86,123 @@ const Aqi: FC = () => {
 				<List
 					items={[
 						{
-							icon: <MdOutlineKeyboardDoubleArrowDown />,
+							icon:
+								series[0].data[moment().hour()] >
+								series[0].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "Ozone",
-							value: 0.1,
+							value: series[0].data[moment().hour()],
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowUp />,
+							icon:
+								series[1].data[moment().hour()] >
+								series[1].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "Carbon Monoxide",
-							value: 0.3,
+							value: series[1].data[moment().hour()],
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowDown />,
+							icon:
+								series[2].data[moment().hour()] >
+								series[2].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "Carbon Dioxide",
-							value: 0.3,
+							value: series[2].data[moment().hour()],
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowUp />,
+							icon:
+								series[3].data[moment().hour()] >
+								series[3].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "Nitrogen Oxide",
-							value: 0.3,
+							value: series[3].data[moment().hour()],
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowDown />,
+							icon:
+								series[4].data[moment().hour()] >
+								series[4].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "Nitrogen Dioxide",
-							value: 0.2,
+							value: series[4].data[moment().hour()],
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowDown />,
+							icon:
+								series[5].data[moment().hour()] >
+								series[5].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "Sulfur Dioxide",
-							value: 0.1,
+							value: series[5].data[moment().hour()],
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowUp />,
+							icon:
+								series[6].data[moment().hour()] >
+								series[6].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "Ammonia",
-							value: 0.1,
+							value: series[6].data[moment().hour()],
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowUp />,
+							icon:
+								series[7].data[moment().hour()] >
+								series[7].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "Methane",
-							value: 0.1,
+							value: series[7].data[moment().hour()],
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowUp />,
+							icon:
+								series[9].data[moment().hour()] >
+								series[9].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "PM2.5",
-							value: 0.1,
+							value: series[9].data[moment().hour()],
 							unit: "µg/m³",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowDown />,
+							icon:
+								series[10].data[moment().hour()] >
+								series[10].data[moment().hour() - 1] ? (
+									<MdOutlineKeyboardDoubleArrowUp />
+								) : (
+									<MdOutlineKeyboardDoubleArrowDown />
+								),
 							text: "PM10",
-							value: 0.1,
+							value: series[10].data[moment().hour()],
 							unit: "µg/m³",
 						},
 					]}
