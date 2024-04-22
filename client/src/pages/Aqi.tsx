@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useEffect, useState } from "react";
 // Components
 import Card from "components/Card";
 import List from "components/List";
@@ -8,26 +8,77 @@ import {
 	MdOutlineKeyboardDoubleArrowDown,
 	MdOutlineKeyboardDoubleArrowUp,
 } from "react-icons/md";
+// Data
+import { series } from "data/aqi.json";
+// Moment JS
+import moment from "moment/moment";
 
 const Aqi: FC = () => {
+	const [xData, setXData] = useState<string[]>([]);
+
+	useEffect(() => {
+		const handleXData = (): void => {
+			const xData: string[] = [];
+			for (let i = 0; i <= moment().hour(); i++) {
+				xData.push(`${i}:00`);
+			}
+			setXData(xData);
+		};
+
+		handleXData();
+	}, []);
+
 	return (
 		<div className="aqi">
 			<Card className="graph" title="Air Quality Index">
 				<Graph
 					series={[
-						{ data: [21, 20, 30, 40], label: "Ozone" },
-						{ data: [23, 24, 35, 45], label: "Carbon Monoxide" },
-						{ data: [21, 20, 30, 40], label: "Carbon Dioxide" },
-						{ data: [23, 24, 35, 45], label: "Nitrogen Oxide" },
-						{ data: [21, 20, 30, 40], label: "Nitrogen Dioxide" },
-						{ data: [23, 24, 35, 45], label: "Sulfur Dioxide" },
-						{ data: [21, 20, 30, 40], label: "Ammonia" },
-						{ data: [23, 24, 35, 45], label: "Methane" },
-						{ data: [21, 20, 30, 40], label: "PM1" },
-						{ data: [23, 24, 35, 45], label: "PM2.5" },
-						{ data: [21, 20, 30, 40], label: "PM10" },
+						{
+							data: series[0].data.slice(0, moment().hour() + 1),
+							label: series[0].label,
+						},
+						{
+							data: series[1].data.slice(0, moment().hour() + 1),
+							label: series[1].label,
+						},
+						{
+							data: series[2].data.slice(0, moment().hour() + 1),
+							label: series[2].label,
+						},
+						{
+							data: series[3].data.slice(0, moment().hour() + 1),
+							label: series[3].label,
+						},
+						{
+							data: series[4].data.slice(0, moment().hour() + 1),
+							label: series[4].label,
+						},
+						{
+							data: series[5].data.slice(0, moment().hour() + 1),
+							label: series[5].label,
+						},
+						{
+							data: series[6].data.slice(0, moment().hour() + 1),
+							label: series[6].label,
+						},
+						{
+							data: series[7].data.slice(0, moment().hour() + 1),
+							label: series[7].label,
+						},
+						{
+							data: series[8].data.slice(0, moment().hour() + 1),
+							label: series[8].label,
+						},
+						{
+							data: series[9].data.slice(0, moment().hour() + 1),
+							label: series[9].label,
+						},
+						{
+							data: series[10].data.slice(0, moment().hour() + 1),
+							label: series[10].label,
+						},
 					]}
-					xData={["00:00", "01:00", "02:00", "03:00", "04:00"]}
+					xData={xData}
 					hideLegend={true}
 				/>
 			</Card>
@@ -83,12 +134,6 @@ const Aqi: FC = () => {
 							unit: "ppm",
 						},
 						{
-							icon: <MdOutlineKeyboardDoubleArrowDown />,
-							text: "PM1",
-							value: 0.1,
-							unit: "µg/m³",
-						},
-						{
 							icon: <MdOutlineKeyboardDoubleArrowUp />,
 							text: "PM2.5",
 							value: 0.1,
@@ -96,24 +141,6 @@ const Aqi: FC = () => {
 						},
 						{
 							icon: <MdOutlineKeyboardDoubleArrowDown />,
-							text: "PM10",
-							value: 0.1,
-							unit: "µg/m³",
-						},
-						{
-							icon: <MdOutlineKeyboardDoubleArrowUp />,
-							text: "PM1",
-							value: 0.1,
-							unit: "µg/m³",
-						},
-						{
-							icon: <MdOutlineKeyboardDoubleArrowDown />,
-							text: "PM2.5",
-							value: 0.1,
-							unit: "µg/m³",
-						},
-						{
-							icon: <MdOutlineKeyboardDoubleArrowUp />,
 							text: "PM10",
 							value: 0.1,
 							unit: "µg/m³",

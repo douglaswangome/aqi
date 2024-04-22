@@ -29,7 +29,9 @@
 			"styles/*": ["src/styles/*"],
 			"routes/*": ["src/routes/*"],
 			"types/*": ["src/types/*"],
-			"store/*": ["src/store/*"]
+			"store/*": ["src/store/*"],
+			"data/*": ["src/data/*"],
+			"utils/*": ["src/utils/*"]
 		}
 	},
 	"include": ["src"],
